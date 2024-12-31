@@ -10,17 +10,35 @@
     </head>
     <body style="background-color: honeydew;">
 
-        <h1 style="border:4px chocolate double; margin:100px;padding:50px;background-color:whitesmoke;color:rgba(138, 43, 226, 0.7);font-family: sans-serif;font-size: 400%;text-align: center;">My First Heading</h1>
+        <h1 style="border:4px chocolate double; margin:100px;padding:50px;background-color:whitesmoke;
+            color:rgba(48, 136, 187, 0.842);font-family: sans-serif;font-size: 400%;text-align: center;">
+            My First Heading
+        </h1>
         
         <hr>
 
-        <a href="#HSLA">Move to HSLA</a>
+        <!--image link works but auto goes to tag on some refreshes-->
+        <p>
+            <a href="#HSLA">
+                <img src="images/Lil Kitty.png" alt="Cat face button" 
+                style="float:right;width:42px;height:41px">
+            </a>
+            Click the Kitty to the right to go to HSLA!
+        </p>
         <p style="color:green;">My first paragraph.</p>
 
         <hr>
 
-        <img title="Three good looking guys" src="C:\Users\kylep\Pictures\Downloads\image000000.jpg (4).jpeg" alt="Good looking guys" width="400" height="300">
-        
+        <img title="Three good looking guys" src="images/3Guys.jpeg" 
+            alt="Good looking guys" style="width:800px;height:602px" usemap="#Kyleface">
+        <map name="Kyleface">
+            <area shape="rect" coords="364, 190, 434, 295" onclick="alertFunction()">
+        </map>
+        <script>
+            function alertFunction() {
+                alert("That is Kyle's face!");
+            }
+        </script>
         <br><br>
 
         <a href="https://www.google.com" target="_blank">This is a link to Google</a>
