@@ -26,3 +26,10 @@ h1 {
     background-attachment: scroll; 
     background-size: contain;
 }
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 8px;
+    font-size: large;
+  }
