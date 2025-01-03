@@ -3,7 +3,7 @@ p {
 }
 
 a:link, a:visited {
-color: green;
+
 background-color: transparent;
 text-decoration: none;
 }
@@ -33,3 +33,22 @@ table, th, td {
     padding: 8px;
     font-size: large;
   }
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: gray;
+    color:azure
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+li a:hover {
+    background-color: beige;
+}
