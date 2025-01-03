@@ -52,3 +52,15 @@ li a {
 li a:hover {
     background-color: beige;
 }
+.cucumber {
+    color:whitesmoke;
+}
+.pickle {
+    background-color: lime;
+    color:darkblue;
+    border: 2px dotted black;
+    margin: 12px;
+    padding: 12px;
+    font-size: medium;
+    font-family:'Times New Roman', Times, serif  ;
+}

@@ -149,5 +149,29 @@
             <div style="width:33%;border:2px solid blue;">Two</div>
             <div style="width:33%;border:2px solid yellow;">Three</div>
         </div>
+
+        <script>
+            function newPickleBackColor() {
+                let ele = document.getElementsByClassName("pickle");
+                let r = Math.floor(Math.random() * 256);
+                let g = Math.floor(Math.random() * 256);
+                let b = Math.floor(Math.random() * 256);
+                for (let i = 0; i < ele.length; i++) {
+                    ele[i].style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+                }
+            }
+        </script>
+        <br><br>
+        <button onclick="newPickleBackColor()">Click to change to a random background color!</button>
+
+        <p class="pickle">
+            Pickle Class Baby - class > style
+        </p>
+
+        <p class ="cucumber pickle">
+            Two classes? Which color will the text be? <br>
+            Apparently, which ever one is defined last.
+        </p>
     </body>
 </html>
+
