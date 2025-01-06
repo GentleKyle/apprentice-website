@@ -9,6 +9,11 @@
         </style>
         <title>Cheeseman</title>
         <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+        <script src="script.js"></script>
+        <noscript>JavaScript no worky</noscript>
+        <meta name="description" content="HTML Sandbox Playground">
+        <meta name="author" content="Kyle Pitcher">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body style="background-color: honeydew;">
 
@@ -41,11 +46,7 @@
         <map name="Kyleface">
             <area shape="rect" coords="364, 190, 434, 295" onclick="alertFunction()">
         </map>
-        <script>
-            function alertFunction() {
-                alert("That is Kyle's face!");
-            }
-        </script>
+
         <br><br>
 
         <a href="https://www.google.com" target="_blank">This is a link to Google</a>
@@ -150,17 +151,6 @@
             <div style="width:33%;border:2px solid yellow;">Three</div>
         </div>
 
-        <script>
-            function newPickleBackColor() {
-                let ele = document.getElementsByClassName("pickle");
-                let r = Math.floor(Math.random() * 256);
-                let g = Math.floor(Math.random() * 256);
-                let b = Math.floor(Math.random() * 256);
-                for (let i = 0; i < ele.length; i++) {
-                    ele[i].style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-                }
-            }           
-        </script>
         <br><br>
         <button onclick="newPickleBackColor()">Click to change to a random background color!</button>
 
@@ -175,18 +165,16 @@
 
         <iframe src="https://www.youtube.com/embed/Rdj5-6t6QI8?si=Aqw_DJ7ibitP6rvY" 
             name="iframe_goo" title="testing iframe" allowfullscreen style="width: 560px; height:315px;"></iframe>
-        <p>
-            <a href="https://www.youtube.com/embed/zqmOSMAtadc?si=q-wEvgqXW5HSTPVG" 
-                target="iframe_goo" allowfullscreen id="jsTest">Click me to change the above youtube vid to anotha</a>
-        </p>
-        <script>
-            document.getElementById("jsTest").style.color = "gray";
-        </script>
-        <script src="script.js"></script>
-        <!--do we just need this line once for all js? looks like yes-->
-        <noscript>JavaScript no worky</noscript>
-
+            <p>
+                <a href="https://www.youtube.com/embed/zqmOSMAtadc?si=q-wEvgqXW5HSTPVG" 
+                    target="iframe_goo" allowfullscreen id="jsTest">
+                    Click me to change the above youtube vid to anotha</a>
+            </p>
         </iframe>
+        <script src="script.js"></script>
+        <!--interesting for document.getElementById - works when 
+            linked after the id but not when it is only in head-->
+
     </body>
 </html>
 
