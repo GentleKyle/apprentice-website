@@ -24,7 +24,7 @@ h1 {
     background-image:url('images/rear.png');
     background-repeat: no-repeat;
     background-attachment: scroll; 
-    background-size: contain;
+    background-size: cover;
 }
 
 table, th, td {
@@ -63,4 +63,55 @@ li a:hover {
     padding: 12px;
     font-size: medium;
     font-family:'Times New Roman', Times, serif  ;
+}
+
+@media (max-width: 600px) {
+    section {
+      -webkit-flex-direction: column;
+      flex-direction: column;
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 0px;
+    gap: 8px;
+    background-color: honeydew;
+}
+.grad {
+    border: 2px solid black;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 48px;
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 22px;
+    background-color: white;
+    background-image: linear-gradient(
+        to top left,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.2) 30%,
+        rgba(0, 0, 0, 0)
+      );
+    box-shadow:
+        inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+        inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+}
+.grad:hover {
+    background-color: rgba(153, 241, 21, 0.682);
+  }
+.grad:active {
+    box-shadow:
+      inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+      inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+  }
+
+.emoji {
+    font-size: 65px;
+    text-align: center;
+    padding: 5px;
+    padding-top: 7px;
+    padding-bottom: 6px;
 }

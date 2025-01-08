@@ -14,6 +14,7 @@
         <meta name="description" content="HTML Sandbox Playground">
         <meta name="author" content="Kyle Pitcher">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
     </head>
     <body style="background-color: honeydew;">
 
@@ -25,6 +26,7 @@
         <ul>
             <li style="float:left"><a href="#dList">Descript List</a></li>
             <li style="float:left"><a href="#oList">Ordered List</a></li>
+            <li style="float:left"><a href="#matchGame">Match Game</a></li>
         </ul>
 
         <hr>
@@ -164,17 +166,37 @@
         </p>
 
         <iframe src="https://www.youtube.com/embed/Rdj5-6t6QI8?si=Aqw_DJ7ibitP6rvY" 
-            name="iframe_goo" title="testing iframe" allowfullscreen style="width: 560px; height:315px;"></iframe>
+            name="iframe_goo" title="testing iframe" allowfullscreen style="width: 560px; height:315px;">
+        </iframe>
+
             <p>
                 <a href="https://www.youtube.com/embed/zqmOSMAtadc?si=q-wEvgqXW5HSTPVG" 
                     target="iframe_goo" allowfullscreen id="jsTest">
                     Click me to change the above youtube vid to anotha</a>
             </p>
-        </iframe>
+
         <script src="script.js"></script>
         <!--interesting for document.getElementById - works when 
             linked after the id but not when it is only in head-->
 
+        <hr>
+        <h3 style="text-align: center;font-size: larger;">Matching Game</h3>
+        <h5>Click the buttons to see what is underneath! Match 3 in a row to win!(Only horizontal for now)</h5>
+        <button onclick="reload()">Press to reset and try again!</button>
+        <br><br>
+        <div class="grid" id="matchGame" onclick="outcomeAlert(this)">
+            <button class="grad" onclick="gamble(this)"></button>
+            <button class="grad" onclick="gamble(this)"></button>
+            <button class="grad" onclick="gamble(this)"></button>
+            <button class="grad" onclick="gamble(this)"></button>
+            <button class="grad" onclick="gamble(this)"></button>
+            <button class="grad" onclick="gamble(this)"></button>
+            <button class="grad" onclick="gamble(this)"></button>
+            <button class="grad" onclick="gamble(this)"></button>
+            <button class="grad" onclick="gamble(this)"></button>
+        </div>
+        
     </body>
 </html>
+
 
