@@ -44,7 +44,7 @@
         <hr>
 
         <img title="Three good looking guys" src="images/3Guys.jpeg" 
-            alt="Good looking guys" style="width:800px;height:602px" usemap="#Kyleface">
+            alt="Good looking guys" style="max-width: 100%;height: auto" usemap="#Kyleface">
         <map name="Kyleface">
             <area shape="rect" coords="364, 190, 434, 295" onclick="alertFunction()">
         </map>
@@ -148,10 +148,14 @@
         </div>
 
         <div style="display:flex;background-color: deeppink;border: 3px solid black;text-align:center;">
-            <div style="width:33%;border:2px solid green;">One</div>
-            <div style="width:33%;border:2px solid blue;">Two</div>
-            <div style="width:33%;border:2px solid yellow;">Three</div>
+            <div class="one">One</div>
+            <div class="two">Two</div>
+            <div class="three">Three</div>
         </div>
+        <br><br>
+        <div class="one">One</div>
+        <div class="two">Two</div>
+        <div class="three">Three</div>
 
         <br><br>
         <button onclick="newPickleBackColor()">Click to change to a random background color!</button>

@@ -65,12 +65,7 @@ li a:hover {
     font-family:'Times New Roman', Times, serif  ;
 }
 
-@media (max-width: 600px) {
-    section {
-      -webkit-flex-direction: column;
-      flex-direction: column;
-    }
-}
+
 
 .grid {
     display: grid;
@@ -114,4 +109,25 @@ li a:hover {
     padding: 5px;
     padding-top: 7px;
     padding-bottom: 6px;
+}
+
+.one {
+    width:30%;
+    border:5px solid green;
+    float:left;
+}
+.two {
+    width:30%;
+    border:5px solid blue;
+    float:left;
+}
+.three {
+    width:30%;
+    border:5px solid yellow;
+    float:left;
+}
+@media screen and (max-width: 622px) {
+    .one, .two, .three {
+        width: 100%;
+    }
 }
