@@ -13,7 +13,7 @@
             }
         </style>
 
-        <title>Cheeseman</title>
+        <title>GentleKyle's Basic HTML/CSS/JavaScript Sandbox Webpage</title>
         <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 
         <script src="script.js"></script>
@@ -125,16 +125,16 @@
             </tr>
         </table>
         <br><br>
-        <h4>Description List</h4>
-        <dl id="dList">
+        <h4 id="dList">Description List</h4>
+        <dl>
             <dt>Apple</dt>
             <dd>- Fruit</dd>
             <dt>Cake</dt>
             <dd>- Yummy dessert</dd>
         </dl>
         <br>
-        <h4>Ordered List</h4>
-        <ol id="oList">
+        <h4 id="oList">Ordered List</h4>
+        <ol>
             <li>Apple</li>  
             <li>Cake</li>
                 <ol type="a">
@@ -199,11 +199,11 @@
         -->
 
         <hr>
-        <h3 style="text-align: center;font-size: larger;">Matching Game</h3>
+        <h3 style="text-align: center;font-size: larger;" id="matchGame">Matching Game</h3>
         <h5>Click the buttons to see what is underneath! Match 3 in a row to win!(Only horizontal for now)</h5>
         <button onclick="reload()">Press to reset and try again!</button>
         <br><br>
-        <div class="grid" id="matchGame" onclick="outcomeAlert(this)">
+        <div class="grid" onclick="outcomeAlert(this)">
             <button class="grad" onclick="gamble(this)"></button>
             <button class="grad" onclick="gamble(this)"></button>
             <button class="grad" onclick="gamble(this)"></button>
