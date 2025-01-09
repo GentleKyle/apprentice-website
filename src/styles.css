@@ -131,3 +131,8 @@ li a:hover {
         width: 100%;
     }
 }
+
+.normalP {
+    background-color: honeydew;
+    font-size: 22px;
+}
