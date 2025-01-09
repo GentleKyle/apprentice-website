@@ -44,8 +44,6 @@ function outcomeAlert(grids) {
     if (!grids.contains(grads[0])) {
         for (let i = 0; i < emojis.length; i++) {
             let lookBack = i % gameObj.matchNum;
-            console.log(emojis[i].innerHTML);
-            console.log(emojis[i]);
             if (lookBack === 0) {
                 gameObj.matchCount = 1;
             } 

@@ -2,20 +2,24 @@
 <html lang="en-US">
     <head>
         <meta charset="UTF-8">
+        <meta name="description" content="Kyle's learning HTML">
+        <meta name="author" content="Kyle Pitcher">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles.css">
+
         <style>
             p {
                 font-size: 200%;
             }
         </style>
+
         <title>Cheeseman</title>
         <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
         <script src="script.js"></script>
         <noscript>JavaScript no worky</noscript>
-        <meta name="description" content="HTML Sandbox Playground">
-        <meta name="author" content="Kyle Pitcher">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
+
     <body style="background-color: honeydew;">
 
         <h1 style="border:4px chocolate double; margin:100px;padding:50px;background-color:whitesmoke;
@@ -31,7 +35,7 @@
 
         <hr>
 
-        <!--image link works but auto goes to tag on some refreshes-->
+        <!--image link works but auto goes to tag on some refreshes(because it is in the url now - i think)-->
         <p>
             <a href="#HSLA">
                 <img src="images/lil kitty.png" alt="Cat face button" 
@@ -43,12 +47,21 @@
 
         <hr>
 
+        <p class="normalP">
+            Click on my face and see what happens.
+        </p>
+
         <img title="Three good looking guys" src="images/3guys.jpeg" 
-            alt="Good looking guys" style="max-width: 100%;height: auto" usemap="#Kyleface">
+            alt="Good looking guys" style="width:800px;height:602px" usemap="#Kyleface">
         <map name="Kyleface">
             <area shape="rect" coords="364, 190, 434, 295" onclick="alertFunction()">
         </map>
 
+        <p class="normalP">
+            Responsive pic size
+        </p>
+        <img title="Three good looking guys" src="images/3guys.jpeg" 
+            alt="Good looking guys" style="max-width: 100%;height: auto">
         <br><br>
 
         <a href="https://www.google.com" target="_blank">This is a link to Google</a>
@@ -73,8 +86,8 @@
             <small>Small</small><br>
             <del>Deleted</del><br>
             <ins>Inserted</ins><br>
-            <sub>Subscript</sub><br>
-            <sup>Superscript</sup><br>
+            Normal <sub>Subscript</sub><br>
+            Normal <sup>Superscript</sup><br>
 
             <blockquote cite="me">Blockquote - quoted from another source</blockquote><br>
             <q>q - short quotes</q><br>
@@ -181,7 +194,9 @@
 
         <script src="script.js"></script>
         <!--interesting for document.getElementById - works when 
-            linked after the id but not when it is only in head-->
+            linked after the id but not when it is only in head
+            must be executed
+        -->
 
         <hr>
         <h3 style="text-align: center;font-size: larger;">Matching Game</h3>
@@ -247,7 +262,15 @@
             Extra spaces: x &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a<br>
             &cent;<br>
             &quot; &apos;<br>
-            &copy;
+            &copy;<br><br>
+
+            Symbols:<br>
+            &hearts; &diams;<br>
+            &uarr; &Delta; &Zeta;<br><br>
+
+            Emojis:<br>
+            &#128512;<br>
+            &#128151;
         </p>
 
     </body>
