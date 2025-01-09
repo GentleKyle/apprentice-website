@@ -60,4 +60,10 @@ function outcomeAlert(grids) {
     } 
 }
 
+function autoDate() {
+    const d = new Date();
+    const dStr = d.toLocaleString();
 
+    document.getElementById("time").textContent = dStr;
+}
+setInterval(autoDate, 1000);
