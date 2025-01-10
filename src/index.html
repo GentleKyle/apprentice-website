@@ -200,7 +200,7 @@
 
         <hr>
         <h3 style="text-align: center;font-size: larger;" id="matchGame">Matching Game</h3>
-        <h5>Click the buttons to see what is underneath! Match 3 in a row to win!(Only horizontal for now)</h5>
+        <h5>Click the buttons to see what is underneath! Match 3 to win!</h5>
         <button onclick="reload()">Press to reset and try again!</button>
         <br><br>
         <div class="grid" onclick="outcomeAlert(this)">
@@ -214,7 +214,25 @@
             <button class="grad" onclick="gamble(this)"></button>
             <button class="grad" onclick="gamble(this)"></button>
         </div>
-        
+        <div id="winPop" popover>
+            You win! <br>
+            <button onclick="reload()" ><a href="#matchGame">
+                Try again
+            </a></button>
+            <button popovertarget="winPop" popovertargetaction="hide">
+                Close
+            </button>
+        </div>
+        <div id="losePop" popover>
+            You lose! <br>
+            <button onclick="reload()"><a href="#matchGame">
+                Try again
+            </a></button>
+            <button popovertarget="losePop" popovertargetaction="hide">
+                Close
+            </button>
+        </div>
+
         <div style="font-size: 22px;background-color: honeydew;">
             <p style="font-size: 22px;background-color: honeydew;">
                 <kbd>Ctrl + c</kbd> to copy

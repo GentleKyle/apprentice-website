@@ -3,7 +3,7 @@ document.getElementById("jsTest").style.backgroundColor = "lime";
 document.getElementById("jsTest").style.color = "gray";
 
 function alertFunction() {
-    alert("That is Kyle's face!");
+    alert("Ouch!");
 }
 
 function newPickleBackColor() {
@@ -17,7 +17,7 @@ function newPickleBackColor() {
 }
 
 function gamble(ele) {
-    let emojis = [127799, 127795, 127808, 127812, 129365]; 
+    let emojis = [127799, 127795, 127808];//, 127812, 129365]; 
     let randE = Math.floor(Math.random() * emojis.length);
 
     const newEle = document.createElement("div");
@@ -31,7 +31,8 @@ function reload() {
 }
 
 
-//CAN IMPROVE - enough for now - add columns/win msg on third match/other than alert(popover?)/alert once
+//CAN IMPROVE - win msg on third match
+//better way is to make random emojis array first so we know what wins before buttons are pressed - all in one func
 function outcomeAlert(grids) {
     let grads = grids.getElementsByClassName("grad");
     let emojis = grids.getElementsByClassName("emoji");
@@ -40,7 +41,9 @@ function outcomeAlert(grids) {
         arrData: emojis,
         matchCount: 0,
     };
-    
+    const winPop = document.getElementById("winPop");
+    const losePop = document.getElementById("losePop");
+
     if (!grids.contains(grads[0])) {
         for (let i = 0; i < emojis.length; i++) {
             let lookBack = i % gameObj.matchNum;
@@ -51,10 +54,24 @@ function outcomeAlert(grids) {
                 gameObj.matchCount++;
             }
             if (gameObj.matchCount === gameObj.matchNum) {
-                return alert("You Win!!");
+                return winPop.showPopover();
             }  
+        }
+
+        for (let i = 0; i < emojis.length / gameObj.matchNum; i++) {
+            let lookAhead = gameObj.matchNum;
+            gameObj.matchCount = 1;
+            for (let j = 1; j < lookAhead; j++) {
+                if (emojis[i].innerHTML === emojis[i + (lookAhead * j)].innerHTML) {
+                    gameObj.matchCount++;
+                }  
+            }
+            if (gameObj.matchCount === gameObj.matchNum) {
+                console.log("win from col");
+                return winPop.showPopover();
+            }
         }    
-        return alert("You Lose!!");
+        return losePop.showPopover();
     } 
 }
 

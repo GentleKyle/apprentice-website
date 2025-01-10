@@ -136,3 +136,18 @@ li a:hover {
     background-color: honeydew;
     font-size: 22px;
 }
+
+#winPop {
+    background-color: rgb(131, 249, 131);
+    font-size: larger;
+    text-align: center;
+    width: 200px;
+    height: 60px;
+}
+#losePop {
+    background-color: red;
+    font-size: larger;
+    text-align: center;
+    width: 200px;
+    height: 60px;
+}
