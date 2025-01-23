@@ -422,7 +422,7 @@ function timer() {
 
 function gameOver() {
     let dialog = document.getElementById("gameOver");
-    let msg = "Time's Up! <br> Your Score: " + score() + "<br>";
+    let msg = "Time's Up! <br> Your Score: " + score() + "<br><br>";
     dialog.innerHTML = msg;
 
     const aganeBut = document.createElement("button");

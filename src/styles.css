@@ -266,6 +266,7 @@ li a:hover {
       );
 }
 #gameOver button {
+    padding: 8px 40px;
     outline: none;
     border-radius: 10px;
     background-color: white;
