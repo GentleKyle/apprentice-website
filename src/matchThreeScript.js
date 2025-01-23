@@ -38,7 +38,8 @@ cells.forEach(cell => {
     cell.addEventListener("drop", dragDrop);
     cell.addEventListener("dragover", (event) => {event.preventDefault()});
 
-    //cell.addEventListener("touch")
+    cell.addEventListener("touchstart", touchStart);
+    cell.addEventListener("touchend", touchEnd);
 });
 
 window.onload = start();
@@ -73,6 +74,10 @@ function isSpecial(gemId) {
 let beingDragged;
 function dragStart(e) {
     beingDragged = e.target;
+    timer();
+}
+
+function touchStart(e) {
     timer();
 }
 
@@ -486,4 +491,41 @@ function dragDrop(e) {
     //transparent star effect in n out opacity
     //touch support
 }
- 
+
+function touchEnd(touchedGem) {
+    
+    let touchedGemId = touchedGem.target.id;
+    let gemLoc;
+    let foundGem = false;
+
+    cells.forEach((gem) => {
+        gemLoc = gem.getBoundingClientRect();
+
+        if (
+            touchedGem.changedTouches[0].clientX >= gemLoc.left &&
+            touchedGem.changedTouches[0].clientX <= gemLoc.right &&
+            touchedGem.changedTouches[0].clientY >= gemLoc.top &&
+            touchedGem.changedTouches[0].clientY <= gemLoc.bottom
+        )   {
+            foundGem = gem.id;
+        }
+    })
+
+    if (foundGem) {
+        let legalCheck = Math.abs(touchedGemId - foundGem);
+
+        if (legalCheck === 1 || legalCheck === numInRow) {
+            switchGems(touchedGemId, foundGem);
+            let matchObj = checkForMatches();
+            if (matchObj.matches) {
+                destroyMatches(touchedGemId);
+            }
+            else {
+                setTimeout(() => {
+                    switchGems(touchedGemId, foundGem);    
+                }, 222)
+            }
+    
+        }
+    }
+}
