@@ -30,9 +30,6 @@ function reload() {
     location.reload();
 }
 
-
-//CAN IMPROVE - win msg on third match
-//better way is to make random emojis array first so we know what wins before buttons are pressed - all in one func
 function outcomeAlert(grids) {
     let grads = grids.getElementsByClassName("grad");
     let emojis = grids.getElementsByClassName("emoji");
@@ -67,7 +64,6 @@ function outcomeAlert(grids) {
                 }  
             }
             if (gameObj.matchCount === gameObj.matchNum) {
-                console.log("win from col");
                 return winPop.showPopover();
             }
         }    
@@ -82,3 +78,7 @@ function autoDate() {
     document.getElementById("time").textContent = dStr;
 }
 setInterval(autoDate, 1000);
+
+
+
+   

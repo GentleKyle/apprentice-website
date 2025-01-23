@@ -151,3 +151,168 @@ li a:hover {
     width: 200px;
     height: 60px;
 }
+
+
+#matchThree {
+    width: 88vmin;
+    height: 88vmin;
+    display: grid;
+    grid-template-columns: repeat(8, 12.5%);
+    background-image: url("Images/match-three/grid-background-chess.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    justify-content: center;
+    border: 6px ridge black;
+    border-radius: 10px;
+}
+.cell {
+    width: 100%;
+    aspect-ratio: 1;
+}
+.cell:hover {
+    background-color: rgb(208, 208, 188);
+}
+.cell.special:hover {
+    animation-play-state: paused;
+}
+.red {
+    background-image: url("Images/match-three/red.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.silver {
+    background-image: url("Images/match-three/silver.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.green {
+    background-image: url("Images/match-three/green.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.yellow {
+    background-image: url("Images/match-three/yellow.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.purple {
+    background-image: url("Images/match-three/purple.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.orange {
+    background-image: url("Images/match-three/orange.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.blue {
+    background-image: url("Images/match-three/blue.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.special {
+    animation: rgb 10s linear infinite alternate;
+}
+@keyframes rgb {
+    0% {background-color: rgb(255, 47, 0);}
+    20% {background-color: rgb(255, 251, 0);}
+    40% {background-color: rgb(0, 255, 72);}
+    60% {background-color: rgb(0, 179, 255);}
+    80% {background-color: rgb(93, 3, 250);}
+    100% {background-color: rgb(255, 0, 221);}
+
+}
+.info {
+    justify-content: space-evenly;
+    display: flex;
+    border: 6px ridge black;
+    border-radius: 10px;
+    width: 88vmin;
+    max-height: fit-content;
+    padding: 5px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 22px;
+    background-color: white;
+    background-image: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.2) 30%,
+        rgba(0, 0, 0, 0)
+      );
+}
+
+.same {
+    text-align: center;
+    border-radius: 10px;
+    border: 3px ridge black;
+    min-width: fit-content;
+    padding-left: 2%;
+    padding-right: 2%;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 22px;
+    background-color: white;
+    background-image: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.2) 30%,
+        rgba(0, 0, 0, 0)
+      );
+}
+#gameOver button {
+    outline: none;
+    border-radius: 10px;
+    background-color: white;
+    background-image: linear-gradient(
+        to top left,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.2) 30%,
+        rgba(0, 0, 0, 0)
+      );
+    box-shadow:
+        inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+        inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+    
+}
+#gameOver::backdrop {
+    background: url(Images/match-three/star-background.jpg) no-repeat center fixed;
+    background-size: cover;
+    opacity: .50;
+}
+#gameStart::backdrop {
+    background: url(Images/match-three/star-background.jpg) no-repeat center fixed;
+    background-size: cover;
+    opacity: .50;
+}
+#gameStart button {
+    padding: 10px 50px;
+    outline: none;
+    border-radius: 10px;
+    background-color: white;
+    background-image: linear-gradient(
+        to top left,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.2) 30%,
+        rgba(0, 0, 0, 0)
+      );
+    box-shadow:
+        inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+        inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+    
+}
+#gameStart {
+    max-width:200px;
+    min-width: none;
+}
+#gameStart button:hover {
+    background-color: greenyellow;
+}
+#gameOver button:hover {
+    background-color: greenyellow;
+}
