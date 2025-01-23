@@ -1,0 +1,318 @@
+p {
+    background-color:gainsboro;
+}
+
+a:link, a:visited {
+
+background-color: transparent;
+text-decoration: none;
+}
+
+a:hover {
+color: red;
+background-color: transparent;
+text-decoration: underline;
+}
+
+a:active {
+color: yellow;
+background-color: transparent;
+text-decoration: underline;
+}
+
+h1 {
+    background-image:url('images/rear.png');
+    background-repeat: no-repeat;
+    background-attachment: scroll; 
+    background-size: cover;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 8px;
+    font-size: large;
+  }
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: gray;
+    color:azure
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+li a:hover {
+    background-color: beige;
+}
+.cucumber {
+    color:whitesmoke;
+}
+.pickle {
+    background-color: lime;
+    color:darkblue;
+    border: 2px dotted black;
+    margin: 12px;
+    padding: 12px;
+    font-size: medium;
+    font-family:'Times New Roman', Times, serif  ;
+}
+
+
+
+.grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 0px;
+    gap: 8px;
+    background-color: honeydew;
+}
+.grad {
+    border: 2px solid black;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 48px;
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 22px;
+    background-color: white;
+    background-image: linear-gradient(
+        to top left,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.2) 30%,
+        rgba(0, 0, 0, 0)
+      );
+    box-shadow:
+        inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+        inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+}
+.grad:hover {
+    background-color: rgba(153, 241, 21, 0.682);
+  }
+.grad:active {
+    box-shadow:
+      inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+      inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+  }
+
+.emoji {
+    font-size: 65px;
+    text-align: center;
+    padding: 5px;
+    padding-top: 7px;
+    padding-bottom: 6px;
+}
+
+.one {
+    width:30%;
+    border:5px solid green;
+    float:left;
+}
+.two {
+    width:30%;
+    border:5px solid blue;
+    float:left;
+}
+.three {
+    width:30%;
+    border:5px solid yellow;
+    float:left;
+}
+@media screen and (max-width: 622px) {
+    .one, .two, .three {
+        width: 100%;
+    }
+}
+
+.normalP {
+    background-color: honeydew;
+    font-size: 22px;
+}
+
+#winPop {
+    background-color: rgb(131, 249, 131);
+    font-size: larger;
+    text-align: center;
+    width: 200px;
+    height: 60px;
+}
+#losePop {
+    background-color: red;
+    font-size: larger;
+    text-align: center;
+    width: 200px;
+    height: 60px;
+}
+
+
+#matchThree {
+    width: 88vmin;
+    height: 88vmin;
+    display: grid;
+    grid-template-columns: repeat(8, 12.5%);
+    background-image: url("Images/match-three/grid-background-chess.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    justify-content: center;
+    border: 6px ridge black;
+    border-radius: 10px;
+}
+.cell {
+    width: 100%;
+    aspect-ratio: 1;
+}
+.cell:hover {
+    background-color: rgb(208, 208, 188);
+}
+.cell.special:hover {
+    animation-play-state: paused;
+}
+.red {
+    background-image: url("Images/match-three/red.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.silver {
+    background-image: url("Images/match-three/silver.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.green {
+    background-image: url("Images/match-three/green.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.yellow {
+    background-image: url("Images/match-three/yellow.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.purple {
+    background-image: url("Images/match-three/purple.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.orange {
+    background-image: url("Images/match-three/orange.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.blue {
+    background-image: url("Images/match-three/blue.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.special {
+    animation: rgb 10s linear infinite alternate;
+}
+@keyframes rgb {
+    0% {background-color: rgb(255, 47, 0);}
+    20% {background-color: rgb(255, 251, 0);}
+    40% {background-color: rgb(0, 255, 72);}
+    60% {background-color: rgb(0, 179, 255);}
+    80% {background-color: rgb(93, 3, 250);}
+    100% {background-color: rgb(255, 0, 221);}
+
+}
+.info {
+    justify-content: space-evenly;
+    display: flex;
+    border: 6px ridge black;
+    border-radius: 10px;
+    width: 88vmin;
+    max-height: fit-content;
+    padding: 5px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 22px;
+    background-color: white;
+    background-image: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.2) 30%,
+        rgba(0, 0, 0, 0)
+      );
+}
+
+.same {
+    text-align: center;
+    border-radius: 10px;
+    border: 3px ridge black;
+    min-width: fit-content;
+    padding-left: 2%;
+    padding-right: 2%;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 22px;
+    background-color: white;
+    background-image: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.2) 30%,
+        rgba(0, 0, 0, 0)
+      );
+}
+#gameOver button {
+    outline: none;
+    border-radius: 10px;
+    background-color: white;
+    background-image: linear-gradient(
+        to top left,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.2) 30%,
+        rgba(0, 0, 0, 0)
+      );
+    box-shadow:
+        inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+        inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+    
+}
+#gameOver::backdrop {
+    background: url(Images/match-three/star-background.jpg) no-repeat center fixed;
+    background-size: cover;
+    opacity: .50;
+}
+#gameStart::backdrop {
+    background: url(Images/match-three/star-background.jpg) no-repeat center fixed;
+    background-size: cover;
+    opacity: .50;
+}
+#gameStart button {
+    padding: 10px 50px;
+    outline: none;
+    border-radius: 10px;
+    background-color: white;
+    background-image: linear-gradient(
+        to top left,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.2) 30%,
+        rgba(0, 0, 0, 0)
+      );
+    box-shadow:
+        inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+        inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+    
+}
+#gameStart {
+    max-width:200px;
+    min-width: none;
+}
+#gameStart button:hover {
+    background-color: greenyellow;
+}
+#gameOver button:hover {
+    background-color: greenyellow;
+}

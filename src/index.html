@@ -1,9 +1,309 @@
 <!DOCTYPE html>
-<html>
-    <body>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Kyle's learning HTML">
+        <meta name="author" content="Kyle Pitcher">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
 
-        <h1>My First Heading</h1>
-        <p>My first paragraph.</p>
+        <style>
+            p {
+                font-size: 200%;
+            }
+        </style>
 
+        <title>GentleKyle's Basic HTML/CSS/JavaScript Sandbox Webpage</title>
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+
+    </head>
+
+    <body style="background-color: honeydew;">
+
+        <h1 style="border:4px chocolate double; margin:100px;padding:50px;background-color:whitesmoke;
+            color:rgba(48, 136, 187, 0.842);font-family: sans-serif;font-size: 400%;text-align: center;">
+            My First Heading
+        </h1>
+        
+        <ul>
+            <li style="float:left"><a href="#dList">Descript List</a></li>
+            <li style="float:left"><a href="#oList">Ordered List</a></li>
+            <li style="float:left"><a href="#matchGame">Match Game</a></li>
+            <li style="float:left"><a href="./form.html">Form Page</a></li>
+            <li style="float:left"><a href="./matchThree.html">MATCH THREE!</a></li>
+        </ul>
+
+        <hr>
+
+        <!--image link works but auto goes to tag on some refreshes(because it is in the url now - i think)-->
+        <p>
+            <a href="#HSLA">
+                <img src="images/lil kitty.png" alt="Cat face button" 
+                style="float:right;width:42px;height:41px">
+            </a>
+            Click the Kitty to the right to go to HSLA!
+        </p>
+        <p style="color:green;">My first paragraph.</p>
+
+        <hr>
+
+        <p class="normalP">
+            Click on my face and see what happens.
+        </p>
+
+        <img title="Three good looking guys" src="images/3guys.jpeg" 
+            alt="Good looking guys" style="width:800px;height:602px" usemap="#Kyleface">
+        <map name="Kyleface">
+            <area shape="rect" coords="364, 190, 434, 295" onclick="alertFunction()">
+        </map>
+
+        <p class="normalP">
+            Responsive pic size
+        </p>
+        <img title="Three good looking guys" src="images/3guys.jpeg" 
+            alt="Good looking guys" style="max-width: 100%;height: auto">
+        <br><br>
+
+        <a href="https://www.google.com" target="_blank">This is a link to Google</a>
+        <br><br>
+        <button onclick="document.location='https://www.google.com'">A button to Google</button>
+
+        <pre>
+            This keeps my spaces.
+
+            And line breaks.
+
+            Extra spaaace     .
+        </pre>
+        
+        <br>
+        <p>
+            <b>Bold</b><br>
+            <strong>Strong</strong><br>
+            <i>Italic</i><br>
+            <em>Emphasized</em><br>
+            <mark>Marked/highlighted</mark><br>
+            <small>Small</small><br>
+            <del>Deleted</del><br>
+            <ins>Inserted</ins><br>
+            Normal <sub>Subscript</sub><br>
+            Normal <sup>Superscript</sup><br>
+
+            <blockquote cite="me">Blockquote - quoted from another source</blockquote><br>
+            <q>q - short quotes</q><br>
+            <abbr title="good game">GG</abbr><br>
+            <address>address - contact info here - no br</address>
+            <cite>cite - title of creative work</cite><br>
+            <bdo dir="rtl">bdo dir="rtl" is it right to left?</bdo>
+            <br>
+        </p>
+        <!-- this is a comment <p> </p> - can comment out stuff too weee-->
+
+        <p style="color: hsla(0, 100%, 50%, 0.5)" id="HSLA">
+            HSLA - no hue, full sat, half light, half alpha
+
+        </p>
+
+        <table style="width:50%">
+            <caption style="font-size:large;"><b>Grocery List</b></caption>
+            <tr>
+                <th style="text-align:left;">Item</th>
+                <th>Price</th>
+                <th colspan="2">Store</th>
+                
+            </tr>
+            <tr>
+                <td>Apple</td>
+                <td>$1.22</td>
+                <td>Kroger</td>
+                <td>Publix</td>
+            </tr>
+            <tr>
+                <td>Cake</td>
+                <td>$11.99</td>
+                <td>Publix</td>
+            </tr>
+        </table>
+        <br><br>
+        <h4 id="dList">Description List</h4>
+        <dl>
+            <dt>Apple</dt>
+            <dd>- Fruit</dd>
+            <dt>Cake</dt>
+            <dd>- Yummy dessert</dd>
+        </dl>
+        <br>
+        <h4 id="oList">Ordered List</h4>
+        <ol>
+            <li>Apple</li>  
+            <li>Cake</li>
+                <ol type="a">
+                    <li>Chocolate</li>
+                    <li>Coffee</li>
+                </ol>
+        </ol>
+        <br>
+
+        <div style="background-color:blueviolet;color:white;">
+            <h4>Div Me</h4>
+            <p>
+                Wow, using div here to style this block. <br>
+                How we looking? <br>
+                Oh, the p style from the css file takes precedence. 
+                Only the header uses the style from the div. 
+                Except only the background-color is defined so the text color is still changed. 
+                <br>
+                <span style="background-color: blueviolet;color:white">
+                    What if I use span though? <br>
+                    Works.
+                </span>
+            </p>
+        </div>
+
+        <div style="display:flex;background-color: deeppink;border: 3px solid black;text-align:center;">
+            <div class="one">One</div>
+            <div class="two">Two</div>
+            <div class="three">Three</div>
+        </div>
+        <br><br>
+        <div class="one">One</div>
+        <div class="two">Two</div>
+        <div class="three">Three</div>
+
+        <br><br>
+        <button onclick="newPickleBackColor()">Click to change to a random background color!</button>
+
+        <p class="pickle">
+            Pickle Class Baby - class > style
+        </p>
+
+        <p class ="cucumber pickle">
+            Two classes? Which color will the text be? <br>
+            Apparently, which ever one is defined last.
+        </p>
+
+        <iframe src="https://www.youtube.com/embed/Rdj5-6t6QI8?si=Aqw_DJ7ibitP6rvY" 
+            name="iframe_goo" title="testing iframe" allowfullscreen style="width: 560px; height:315px;">
+        </iframe>
+
+            <p>
+                <a href="https://www.youtube.com/embed/zqmOSMAtadc?si=q-wEvgqXW5HSTPVG" 
+                    target="iframe_goo" allowfullscreen id="jsTest">
+                    Click me to change the above youtube vid to anotha</a>
+            </p>
+         <!--   
+        <script src="script.js"></script>
+        interesting for document.getElementById - works when 
+            linked after the id but not when it is only in head
+            must be executed
+        -->
+
+        <hr>
+        <h3 style="text-align: center;font-size: larger;" id="matchGame">Matching Game</h3>
+        <h5>Click the buttons to see what is underneath! Match 3 to win!</h5>
+        <button onclick="reload()">Press to reset and try again!</button>
+        <br><br>
+        <div class="grid" onclick="outcomeAlert(this)">
+            <button class="grad" onclick="gamble(this)"></button>
+            <button class="grad" onclick="gamble(this)"></button>
+            <button class="grad" onclick="gamble(this)"></button>
+            <button class="grad" onclick="gamble(this)"></button>
+            <button class="grad" onclick="gamble(this)"></button>
+            <button class="grad" onclick="gamble(this)"></button>
+            <button class="grad" onclick="gamble(this)"></button>
+            <button class="grad" onclick="gamble(this)"></button>
+            <button class="grad" onclick="gamble(this)"></button>
+        </div>
+        <div id="winPop" popover>
+            You win! <br>
+            <button onclick="reload()" ><a href="#matchGame">
+                Try again
+            </a></button>
+            <button popovertarget="winPop" popovertargetaction="hide">
+                Close
+            </button>
+        </div>
+        <div id="losePop" popover>
+            You lose! <br>
+            <button onclick="reload()"><a href="#matchGame">
+                Try again
+            </a></button>
+            <button popovertarget="losePop" popovertargetaction="hide">
+                Close
+            </button>
+        </div>
+
+        <div style="font-size: 22px;background-color: honeydew;">
+            <p style="font-size: 22px;background-color: honeydew;">
+                <kbd>Ctrl + c</kbd> to copy
+            </p>
+
+            <samp>samp - file found.</samp>
+            <br>
+
+            <p style="font-size: 22px;background-color: honeydew;">
+                code: <code>a = b; b = c;</code>
+            </p>
+
+            <pre>
+                <code>
+                x = 1;
+                y = 5;
+                z = 6;
+                </code>
+            </pre>
+
+            <p style="font-size: 22px;background-color: honeydew;">
+                Variables: <var>x</var> + <var>y</var>
+            </p>
+
+            <p style="font-size: 22px;background-color: honeydew;">
+                Do kbd, samp, code look the same? And is var just italic?<br>
+                <kbd>Apple</kbd><br>
+                <samp>Apple</samp><br>
+                <code>Apple</code><br>
+                <var>Var</var> or <i>Var</i><br>
+                The answer is yes.
+            </p>
+
+        </div>
+
+        <time>
+            <div id="time" style="font-size: 3.5em;text-align: center;">
+                <!--auto updating function - autoDate()-->
+            </div>
+        </time>
+
+        <p class="normalP">
+            There are reserved characters in HTML so we use some entities:<br>
+            &lt; &gt; <br>
+            Extra spaces: x &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a<br>
+            &cent;<br>
+            &quot; &apos;<br>
+            &copy;<br><br>
+
+            Symbols:<br>
+            &hearts; &diams;<br>
+            &uarr; &Delta; &Zeta;<br><br>
+
+            Emojis:<br>
+            &#128512;<br>
+            &#128151;
+        </p>
+
+        <button onclick="firstCells(this)">Start</button>
+
+        <div style="background-color: olive;justify-content: center;display:flex;">
+            <div id="matchThree">
+
+            </div>
+        </div>
+        
+
+        <script src="script.js"></script>
+        <noscript>JavaScript no worky</noscript>
     </body>
 </html>
+
+

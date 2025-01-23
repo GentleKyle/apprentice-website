@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Kyle's Match Three">
+        <meta name="author" content="Kyle Pitcher">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+
+        <title>Match Three - GentleKyle</title>
+        <link rel="icon" type="image/x-icon" href="Images/match-three/favicon.ico">
+    </head>
+
+    <body style="background: url(Images/match-three/star-background.jpg) no-repeat center fixed;
+        background-size: cover;">
+        
+        <dialog id="gameStart" class="same">
+            <p class="same">
+                Drag a gem to make three or more in a row. Match as many gems as you can before time runs out!<br>
+                Time starts counting down with your first move.
+            </p>
+        </dialog>
+
+        <dialog id="gameOver" class="same">
+        </dialog>
+
+        <div style="display: flex; justify-content: center;">
+            <div class="info">
+                <div id="score" class="same">
+                    Score: 0
+                </div>
+                <div id="timer" class="same">
+                </div>
+            </div>
+        </div>
+
+
+        <div style="background-color: none;justify-content: center;display:flex;">
+            <div id="matchThree">
+
+            </div>
+        </div>
+
+
+        <script src="matchThreeScript.js"></script>
+        <noscript>JavaScript no worky</noscript>
+    </body>
+</html>
