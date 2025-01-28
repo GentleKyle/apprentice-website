@@ -1,1 +1,77 @@
-my new page
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="form">
+        <meta name="author" content="Kyle Pitcher">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="stylesTwo.css">
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="scriptTwo.js" defer></script>
+
+        <title>Form - GentleKyle</title>
+    </head>
+    <body>
+        <!--actually only show if not currently logged in - or can just hide when we redirect to edit-->
+        <button onclick="openDialog()">Login</button>
+
+        <form id="loginForm" method="post">
+            <dialog id="login">
+                <p>
+                    <h1>Login</h1>
+
+                    <label for="username"><b>Username:</b></label>
+                    <input type="text" placeholder="Enter Username" name="userName" required />
+
+                    <label for="password"><b>Password:</b></label>
+                    <input type="password" placeholder="Enter Password" name="password" required />
+
+                    <button type="submit" name="subBut" value="login">Login</button>
+                    <button type="submit" name="subBut" value="signUp">Sign Up</button>
+                </p>
+            </dialog>
+        </form>
+        <form>
+            <div>
+                <label for="firstName"><b>*First Name:</b></label>
+                <input type="text" placeholder="Enter First Name" name="first_name" required />
+
+                <label for="lastName"><b>*Last Name:</b></label>
+                <input type="text" placeholder="Enter Last Name" name="Last_name" required />
+
+                <label for="birthday"><b>*Birthday:</b></label>
+                <input type="date" name="birthday" required />
+
+                <label for="favColor"><b>Choose your favorite color:</b></label>
+                <input type="color" name="fav_color" />
+
+                <label for="bedtime"><b>What is your bedtime:</b></label>
+                <input type="time" name="bedtime" />
+
+                <fieldset>
+                    <legend><b>Select how many children you have:</b></legend>
+
+                    <input type="radio" name="childs" value="0"/>
+                    <label for="childChoice0">0</label>
+
+                    <input type="radio" name="childs" value="1"/>
+                    <label for="childChoice1">1</label>
+
+                    <input type="radio" name="childs" value="2"/>
+                    <label for="childChoice2">2</label>
+
+                    <input type="radio" name="childs" value="3"/>
+                    <label for="childChoice3">3</label>
+
+                    <input type="radio" name="childs" value="atleast 4"/>
+                    <label for="childChoice4">4+</label>
+                </fieldset>
+                
+            </div>
+        </form>
+
+
+    </body>
+</html>
+<!--form for data entry then submit takes you to new page that displays data and there is new bg image button
+put login info into object that also holds all settings/pref for profile - then can load it off that-->
