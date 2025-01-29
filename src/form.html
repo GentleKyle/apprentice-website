@@ -13,7 +13,7 @@
     </head>
     <body>
         <!--actually only show if not currently logged in - or can just hide when we redirect to edit-->
-        <button onclick="openDialog()">Login</button>
+        
 
         <form id="loginForm" method="post">
             <dialog id="login">
@@ -31,7 +31,7 @@
                 </p>
             </dialog>
         </form>
-        <form>
+        <form id="profileForm" method="post">
             <div>
                 <label for="firstName"><b>*First Name:</b></label>
                 <input type="text" placeholder="Enter First Name" name="first_name" required />
@@ -45,7 +45,7 @@
                 <label for="favColor"><b>Choose your favorite color:</b></label>
                 <input type="color" name="fav_color" />
 
-                <label for="bedtime"><b>What is your bedtime:</b></label>
+                <label for="bedtime"><b>Your bedtime is:</b></label>
                 <input type="time" name="bedtime" />
 
                 <fieldset>
@@ -67,8 +67,11 @@
                     <label for="childChoice4">4+</label>
                 </fieldset>
                 
+                <button type="submit">Save</button>
             </div>
         </form>
+
+        <div id="pic"></div>
 
 
     </body>

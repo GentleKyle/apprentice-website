@@ -1,0 +1,10 @@
+img {
+    max-width: 100%;
+    height: auto;
+}
+#login {
+    background-color: antiquewhite;
+}
+#login::backdrop {
+    background:radial-gradient(farthest-side,rgb(203, 199, 199),rgb(28, 64, 19),black);
+}

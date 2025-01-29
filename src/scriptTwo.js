@@ -11,9 +11,10 @@ function openDialog() {
     return false;
 }
 
-window.onload = openDialog();
+//window.onload = openDialog();
 
 const loginForm = document.getElementById("loginForm");
+const profileForm = document.getElementById("profileForm");
 let currentUser;
 
 loginForm.onsubmit = (e) => {
@@ -41,6 +42,7 @@ loginForm.onsubmit = (e) => {
         else {
             //confirm msg - maybe display at top
             setLoginInfo(loginFormData);
+            //closeDialog();
         }
     }
     return false;
@@ -85,7 +87,7 @@ function validateLogin(loginFormData) {
     }
     return validUser;
 }
-
+/*
 function editProfile() {
     //populate all elements with data
 }
@@ -96,5 +98,23 @@ function addData(name, value) {
         user.userName === currentUser;
     });
 
+    users[userID][name] = value;
 
+    console.log(users);
+}
+*/
+
+function randomImg() {
+    const randomNum = Math.floor(Math.random() * 100);
+    const picEle = document.getElementById("pic");
+    
+    axios.get(`https://picsum.photos/id/${randomNum}/info`).then((picSum) => {
+        console.log(picSum);
+        
+        const img = document.createElement("img");
+        img.src = picSum.data.download_url;
+        picEle.appendChild(img);
+        //document.body.appendChild(img);
+        console.log(img.src);
+    });
 }
