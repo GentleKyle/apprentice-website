@@ -11,20 +11,23 @@
 
         <title>Form - GentleKyle</title>
     </head>
-    <body>
+    <body id="body">
         <!--actually only show if not currently logged in - or can just hide when we redirect to edit-->
         
-
+        <p class="log">
+            You are logged in as: <span id="curLog"></span>   
+            <button onclick="openDialog()">Logout</button>
+        </p>
         <form id="loginForm" method="post">
             <dialog id="login">
                 <p>
                     <h1>Login</h1>
 
                     <label for="username"><b>Username:</b></label>
-                    <input type="text" placeholder="Enter Username" name="userName" required />
+                    <input type="text" placeholder="Enter Username" name="userName" id="usernameBox" required />
 
                     <label for="password"><b>Password:</b></label>
-                    <input type="password" placeholder="Enter Password" name="password" required />
+                    <input type="password" placeholder="Enter Password" name="password" id="passwordBox" required />
 
                     <button type="submit" name="subBut" value="login">Login</button>
                     <button type="submit" name="subBut" value="signUp">Sign Up</button>
@@ -33,45 +36,77 @@
         </form>
         <form id="profileForm" method="post">
             <div>
-                <label for="firstName"><b>*First Name:</b></label>
-                <input type="text" placeholder="Enter First Name" name="first_name" required />
+                <label for="firstName"><b>*First Name:</b>
+                <input type="text" placeholder="Enter First Name" name="firstName" required /></label>
+                
+                <br><br>
+                <label for="lastName"><b>*Last Name:</b>
+                <input type="text" placeholder="Enter Last Name" name="lastName" required /></label>
 
-                <label for="lastName"><b>*Last Name:</b></label>
-                <input type="text" placeholder="Enter Last Name" name="Last_name" required />
+                <br><br>
+                <label for="birthday"><b>*Birthday:</b>
+                <input type="date" name="birthday" required /></label>
 
-                <label for="birthday"><b>*Birthday:</b></label>
-                <input type="date" name="birthday" required />
+                <br><br>
+                <label for="favColor"><b>Choose your favorite color:</b>
+                <input type="color" name="favColor" /></label>
 
-                <label for="favColor"><b>Choose your favorite color:</b></label>
-                <input type="color" name="fav_color" />
+                <br><br>
+                <label for="bedtime"><b>Your bedtime is:</b>
+                <input type="time" name="bedtime" /></label>
 
-                <label for="bedtime"><b>Your bedtime is:</b></label>
-                <input type="time" name="bedtime" />
-
+                <br><br>
                 <fieldset>
                     <legend><b>Select how many children you have:</b></legend>
 
                     <input type="radio" name="childs" value="0"/>
                     <label for="childChoice0">0</label>
 
+                    <br>
                     <input type="radio" name="childs" value="1"/>
                     <label for="childChoice1">1</label>
 
+                    <br>
                     <input type="radio" name="childs" value="2"/>
                     <label for="childChoice2">2</label>
 
+                    <br>
                     <input type="radio" name="childs" value="3"/>
                     <label for="childChoice3">3</label>
-
+                    
+                    <br>
                     <input type="radio" name="childs" value="atleast 4"/>
                     <label for="childChoice4">4+</label>
                 </fieldset>
-                
-                <button type="submit">Save</button>
+
+                <br>
+                <label for="pet"><b>Pick best pet:</b></label>
+                <select name="pet">
+                    <option value="cat">Cat</option>
+                    <option value="dog">Dog</option>
+                    <option value="bird">Bird</option>
+                    <option value="fish">Fish</option>
+                    <option value="pig">Pig</option>
+                </select>
+
+                <br><br>
+                <span><b>About you:</b></span>
+                <textarea type="textarea" name="about"></textarea>
+
+                <br><br>
+                <label for="imgId"><b>Choose an image:</b></label>
+                <input type="hidden" name="imgId" id="imgId"/>
+                <button id="imgBut" type="button" onclick="randomImg()">Change Image</button>
+                <br><br>
+                <img id="pic"></img>
+
+                <br><br>
+                <button type="submit" value="saveBut" class="left">Save All</button>
+                <!--<button type="submit" value="cancelBut" class="right">Cancel</button>-->
             </div>
         </form>
 
-        <div id="pic"></div>
+        
 
 
     </body>

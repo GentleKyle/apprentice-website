@@ -1,6 +1,10 @@
 function closeDialog() {
-    let dialog = document.getElementById("login");
+    const dialog = document.getElementById("login");
+    const usrBox = document.getElementById("usernameBox");
+    const pwBox = document.getElementById("passwordBox");
 
+    usrBox.value = "";
+    pwBox.value = "";
     dialog.close();
 }
 
@@ -8,10 +12,9 @@ function openDialog() {
     let dialog = document.getElementById("login");
 
     dialog.showModal();
-    return false;
 }
 
-//window.onload = openDialog();
+window.onload = openDialog(), setBackground(), randomImg();
 
 const loginForm = document.getElementById("loginForm");
 const profileForm = document.getElementById("profileForm");
@@ -42,10 +45,18 @@ loginForm.onsubmit = (e) => {
         else {
             //confirm msg - maybe display at top
             setLoginInfo(loginFormData);
-            //closeDialog();
+            currentUser = loginFormData.userName;
+            loggedInAs();
+            closeDialog();
         }
     }
-    return false;
+}
+profileForm.onsubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData(profileForm);
+    const profileFormData = Object.fromEntries(formData);
+
+    console.log(profileFormData);
 }
 
 function setLoginInfo(loginFormData) {
@@ -107,14 +118,23 @@ function addData(name, value) {
 function randomImg() {
     const randomNum = Math.floor(Math.random() * 100);
     const picEle = document.getElementById("pic");
+    const imgId = document.getElementById("imgId");
     
     axios.get(`https://picsum.photos/id/${randomNum}/info`).then((picSum) => {
-        console.log(picSum);
-        
-        const img = document.createElement("img");
-        img.src = picSum.data.download_url;
-        picEle.appendChild(img);
-        //document.body.appendChild(img);
-        console.log(img.src);
+
+        picEle.src = picSum.data.download_url;
+        imgId.value = picSum.data.id;
+    });
+}
+
+function loggedInAs() {
+    document.getElementById("curLog").innerHTML = currentUser;
+}
+
+function setBackground() {
+    const bodyBack = document.getElementById("body");
+
+    axios.get(`https://picsum.photos/id/53/info`).then((picSum) => {
+        bodyBack.style.backgroundImage = `url("${picSum.data.download_url}")`;
     });
 }
