@@ -1,6 +1,7 @@
 img {
     max-width: 100%;
     height: auto;
+    border: black 3px solid;
 }
 #login {
     background-color: antiquewhite;
@@ -17,7 +18,7 @@ img {
     padding: 2.5%;
     
     width: 50%;
-    border: solid black 10px;
+    border: solid black 7px;
 }
 textarea {
     resize: none;
@@ -26,6 +27,9 @@ textarea {
 }
 fieldset {
     width: fit-content;
+}
+fieldset input {
+    border: 2px solid black;
 }
 #curLog {
     margin-bottom: 2px;
