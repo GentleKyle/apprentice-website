@@ -11,11 +11,25 @@ function closeDialog() {
 
 function openDialog() {
     let dialog = document.getElementById("login");
+    const currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
 
+    if (currentUser === null || !currentUser.isLoggedIn) {
+        dialog.showModal();
+    }
+}
+
+function logout() {
+    let dialog = document.getElementById("login");
+    const currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
+
+    currentUser.isLoggedIn = false;
+    sessionStorage.setItem("currentUser", JSON.stringify(currentUser));
     dialog.showModal();
 }
 
-window.onload = openDialog(), setBackground(), randomImg();
+if (document.location.pathname === "/C:/Users/kylep/Documents/Tensure%20Apprenticeship/GitHub/apprentice-website/src/form.html") {
+    window.onload = openDialog(), setBackground(), displayUsrName();
+}
 
 const loginForm = document.getElementById("loginForm");
 const profileForm = document.getElementById("profileForm");
@@ -27,11 +41,17 @@ loginForm.onsubmit = (e) => {
 
     const button = e.submitter.value;
     const isUserValid = validateLogin(loginFormData);
+    const user = JSON.parse(sessionStorage.getItem("currentUser"));
 
     if (button === "login") {
         if (isUserValid.isValid) {
-            //currentUser = loginFormData.userName;
-            window.location.replace("profile.html");
+            user.isLoggedIn = true;
+            if (Object.keys(user.data).length < 3) {
+                closeDialog();
+            }
+            else {
+                window.location.replace("profile.html");
+            }
         }
         else {
             alert(isUserValid.reason);
@@ -43,13 +63,16 @@ loginForm.onsubmit = (e) => {
             alert("Username is taken. Log in instead or choose another.");
         }
         else {
+            user.isLoggedIn = true;
             //confirm msg - maybe display at top
             setLoginInfo(loginFormData);
-            //currentUser = loginFormData.userName;
             displayUsrName();
             closeDialog();
+            randomImg();
         }
     }
+    sessionStorage.setItem("currentUser", JSON.stringify(user));
+    //console.log(e);
 }
 profileForm.onsubmit = (e) => {
     e.preventDefault();
@@ -57,9 +80,10 @@ profileForm.onsubmit = (e) => {
     const profileFormData = Object.fromEntries(formData);
 
     setUserProfile(profileFormData);
-    console.log(profileFormData);
+    window.location.replace("profile.html");
+    //console.log(e);
 }
-// set isLoggedIn? to each object or save currentUser to session storage
+
 function setLoginInfo(loginFormData) {
     //could add all kinds of rules for length n things but meh
     let users = JSON.parse(sessionStorage.getItem("userData"));
@@ -67,12 +91,12 @@ function setLoginInfo(loginFormData) {
 
     if (users === null) {
         sessionStorage.setItem("userData", JSON.stringify(first));
-        setCurrentUserIndex(0);
+        setCurrentUser(0);
     }
     else {
         users.push(loginFormData);
         sessionStorage.setItem("userData", JSON.stringify(users));
-        setCurrentUserIndex(users.length - 1);
+        setCurrentUser(users.length - 1);
     }
     
 }
@@ -93,7 +117,7 @@ function validateLogin(loginFormData) {
                 validUser.usernameTaken = true;
                 if (user.password === loginFormData.password) {
                     validUser.isValid = true;
-                    setCurrentUserIndex(index);
+                    setCurrentUser(index);
                     console.log("yooo " + index);
                 }
                 else {
@@ -107,27 +131,15 @@ function validateLogin(loginFormData) {
 }
 
 function setUserProfile(data) {
-    const user = getCurrentUser();
+    const user = JSON.parse(sessionStorage.getItem("currentUser"));
     const users = JSON.parse(sessionStorage.getItem("userData"));
 
     const userUpdated = {...user.data, ...data};
 
     users.splice(user.index, 1, userUpdated);
     sessionStorage.setItem("userData", JSON.stringify(users));
+    editCurrentUser();
 }
-/*    
-function addData(name, value) {
-    //add data to profile/user
-    let users = JSON.parse(sessionStorage.getItem("userData"));
-    let userID = users.findIndex((user) => {
-        user.userName === currentUser;
-    });
-
-    users[userID][name] = value;
-
-    console.log(users);
-}
-*/
 
 function randomImg() {
     const randomNum = Math.floor(Math.random() * 100);
@@ -142,8 +154,11 @@ function randomImg() {
 }
 
 function displayUsrName() {
-    const currentUser = getCurrentUser();
-    document.getElementById("curLog").innerHTML = currentUser.userName;
+    const currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
+    if (currentUser !== null) {
+        currentUser.isLoggedIn = true;
+        document.getElementById("curLog").innerHTML = currentUser.data.userName;
+    }
 }
 
 function setBackground() {
@@ -154,16 +169,52 @@ function setBackground() {
     });
 }
 
-function setCurrentUserIndex(index) {
-    sessionStorage.setItem("currentUserIndex", JSON.stringify(index));
-}
-function getCurrentUser() {
-    const currentUserIndex = JSON.parse(sessionStorage.getItem("currentUserIndex"));
+function setCurrentUser(index) {
     const users = JSON.parse(sessionStorage.getItem("userData"));
     const currentUser = {
-        data: users[currentUserIndex],
-        index: currentUserIndex
-    };
+        data: users[index],
+        index: index,
+        isLoggedIn: false,
+    }; 
 
-    return currentUser;
+    sessionStorage.setItem("currentUser", JSON.stringify(currentUser));
+}
+function editCurrentUser() {
+    const user = JSON.parse(sessionStorage.getItem("currentUser"));
+    const users = JSON.parse(sessionStorage.getItem("userData"));
+
+    user.data = users[user.index];
+
+    sessionStorage.setItem("currentUser", JSON.stringify(user));
+}
+
+function editProfileBut() {
+    window.location.replace("form.html");
+}
+window.addEventListener('load', editProfile());
+function editProfile() {
+    const profileForm = document.getElementById("profileForm");
+    const user = JSON.parse(sessionStorage.getItem("currentUser"));
+
+    for (const [id, value] of Object.entries(profileForm)) {
+        const key = value.name;
+        if (Object.hasOwn(user.data, key)) {
+            console.log(user.data[key]);
+            if (key === "imgId") {
+                const picEle = document.getElementById("pic");
+                axios.get(`https://picsum.photos/id/${user.data[key]}/info`).then((picSum) => {
+                    picEle.src = picSum.data.download_url;
+                });
+            }
+            else if (key === "childs") {
+                if (value.value === user.data[key]) {
+                    const radios = document.querySelectorAll("input[type='radio']");
+                    radios[value.value].checked = true;
+                }
+            }
+            else {
+                value.value = user.data[key];
+            }
+        } 
+    }
 }
