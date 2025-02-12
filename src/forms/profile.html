@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="form">
+        <meta name="author" content="Kyle Pitcher">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="stylesTwo.css">
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="profile.js" defer></script>
+
+        <title id="title">Profile</title>
+    </head>
+    <body id="profile">
+        
+        <ul class="double-border-small">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./form.html">Edit Profile</a></li>
+            <li><a href="./loginForm.html">Logout</a></li>
+        </ul>
+
+        <br><br><br><br><br>
+
+        <div class="contain double-border-small">
+            <img id="pic" class="pic"></img>
+            <h2><p id="name"></p></h2>
+        </div>
+        
+        <br>
+
+        <table id="info" class="double-border-small">
+            <tr>
+                <td><h4>Birthday</h4></td>
+                <td><div id="birthday" class="data"></div></td>
+            </tr>
+            <tr>
+                <td><h4>Bedtime</h4></td>
+                <td><div id="bedtime" class="data"></div></td>
+            </tr>
+            <tr>
+                <td><h4>Number of Children</h4></td>
+                <td><div id="childs" class="data"></div></td>
+            </tr>
+            <tr>
+                <td><h4>Favorite Pet</h4></td>
+                <td><div id="pet" class="data"></div></td>
+            </tr>
+            <tr>
+                <td><h4>About</h4></td>
+                <td><div id="about" class="data"></div></td>
+            </tr>
+        </table>
+        <br>
+    </body>
+</html>

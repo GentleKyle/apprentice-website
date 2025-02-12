@@ -12,29 +12,13 @@
         <title>Form - GentleKyle</title>
     </head>
     <body id="body">
-        <!--actually only show if not currently logged in - or can just hide when we redirect to edit-->
         
         <p class="log">
             You are logged in as: <span id="curLog"></span>   
-            <button onclick="logout()">Logout</button>
+            <button onclick="logOutBut()">Logout</button>
         </p>
-        <form id="loginForm" method="post">
-            <dialog id="login">
-                <p>
-                    <h1>Login</h1>
 
-                    <label for="username"><b>Username:</b></label>
-                    <input type="text" placeholder="Enter Username" name="userName" id="usernameBox" required />
-
-                    <label for="password"><b>Password:</b></label>
-                    <input type="password" placeholder="Enter Password" name="password" id="passwordBox" required />
-
-                    <button type="submit" name="subBut" value="login">Login</button>
-                    <button type="submit" name="subBut" value="signUp">Sign Up</button>
-                </p>
-            </dialog>
-        </form>
-        <form id="profileForm" method="post">
+        <form id="dataForm" method="post">
             <div>
                 <label for="firstName"><b>*First Name:</b>
                 <input type="text" placeholder="Enter First Name" name="firstName" required /></label>
@@ -82,11 +66,11 @@
                 <br>
                 <label for="pet"><b>Pick best pet:</b></label>
                 <select name="pet">
-                    <option value="cat">Cat</option>
-                    <option value="dog">Dog</option>
-                    <option value="bird">Bird</option>
-                    <option value="fish">Fish</option>
-                    <option value="pig">Pig</option>
+                    <option value="Cat">Cat</option>
+                    <option value="Dog">Dog</option>
+                    <option value="Bird">Bird</option>
+                    <option value="Fish">Fish</option>
+                    <option value="Pig">Pig</option>
                 </select>
 
                 <br><br>
@@ -96,19 +80,14 @@
                 <br><br>
                 <label for="imgId"><b>Choose an image:</b></label>
                 <input type="hidden" name="imgId" id="imgId"/>
-                <button id="imgBut" type="button" onclick="randomImg()">Change Image</button>
+                <button id="imgBut" type="button" onclick="randomImgBut()">Change Image</button>
                 <br><br>
                 <img id="pic"></img>
 
                 <br><br>
                 <button type="submit" value="saveBut" class="left">Save All</button>
-                <!--<button type="submit" value="cancelBut" class="right">Cancel</button>-->
             </div>
         </form>
-
-        
-
-
     </body>
 </html>
 <!--form for data entry then submit takes you to new page that displays data and there is new bg image button
