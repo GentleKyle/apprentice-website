@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <style>
+      img {
+        max-width: 95%;
+        height: auto;
+        border: solid white 3px;
+      }
+    </style>
+    
+    <title>Random Image 1-100</title>
+  </head>
+  <body style="background:black; text-align: center;">
+
+    <button onclick="randomImg()" style="margin-top: 12px;">Click me for new image</button>
+
+    <p id="p" style="color:white; display: none;">Picture ID number: <span id="idNum"></span></p>
+
+    <script>
+        function randomImg() {
+            const randomNum = Math.floor(Math.random() * 100);
+            const idNumSpan = document.getElementById("idNum");
+            const paragraph = document.getElementById("p");
+            const imgEle = document.getElementById("theImg");
+            
+            axios.get(`https://picsum.photos/id/${randomNum}/info`).then((picSum) => {
+                
+                if (imgEle) {
+                    imgEle.src = picSum.data.download_url;
+                    imgEle.title = `Author: ${picSum.data.author}`;
+                }
+                else {
+                    const img = document.createElement("img");
+                    img.src = picSum.data.download_url;
+                    img.id = "theImg";
+                    img.title = `Author: ${picSum.data.author}`;
+                    document.body.appendChild(img);
+                }
+
+                p.style.display = "block";
+                idNumSpan.textContent = picSum.data.id;
+            }); 
+        }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="form">
+        <meta name="author" content="Kyle Pitcher">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="stylesTwo.css">
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="scriptTwo.js" defer></script>
+
+        <title>Form - GentleKyle</title>
+    </head>
+    <body id="body">
+        
+        <p class="log">
+            You are logged in as: <span id="curLog"></span>   
+            <button onclick="logOutBut()">Logout</button>
+        </p>
+
+        <form id="dataForm" method="post">
+            <div>
+                <label for="firstName"><b>*First Name:</b>
+                <input type="text" placeholder="Enter First Name" name="firstName" required /></label>
+                
+                <br><br>
+                <label for="lastName"><b>*Last Name:</b>
+                <input type="text" placeholder="Enter Last Name" name="lastName" required /></label>
+
+                <br><br>
+                <label for="birthday"><b>*Birthday:</b>
+                <input type="date" name="birthday" required /></label>
+
+                <br><br>
+                <label for="favColor"><b>Choose your favorite color:</b>
+                <input type="color" name="favColor" value="#000000"/></label>
+
+                <br><br>
+                <label for="bedtime"><b>Your bedtime is:</b>
+                <input type="time" name="bedtime" value="02:22"/></label>
+
+                <br><br>
+                <legend><b>Select how many children you have:</b></legend>
+                <fieldset>
+                    
+
+                    <input type="radio" name="childs" value="0" checked/>
+                    <label for="childChoice0">0</label>
+
+                    <br>
+                    <input type="radio" name="childs" value="1"/>
+                    <label for="childChoice1">1</label>
+
+                    <br>
+                    <input type="radio" name="childs" value="2"/>
+                    <label for="childChoice2">2</label>
+
+                    <br>
+                    <input type="radio" name="childs" value="3"/>
+                    <label for="childChoice3">3</label>
+                    
+                    <br>
+                    <input type="radio" name="childs" value="4"/>
+                    <label for="childChoice4">4+</label>
+                </fieldset>
+
+                <br>
+                <label for="pet"><b>Pick best pet:</b></label>
+                <select name="pet">
+                    <option value="Cat">Cat</option>
+                    <option value="Dog">Dog</option>
+                    <option value="Bird">Bird</option>
+                    <option value="Fish">Fish</option>
+                    <option value="Pig">Pig</option>
+                </select>
+
+                <br><br>
+                <span><b>About you:</b></span>
+                <textarea type="textarea" name="about"></textarea>
+
+                <br><br>
+                <label for="imgId"><b>Choose an image:</b></label>
+                <input type="hidden" name="imgId" id="imgId"/>
+                <button id="imgBut" type="button" onclick="randomImgBut()">Change Image</button>
+                <br><br>
+                <img id="pic"></img>
+
+                <br><br>
+                <button type="submit" value="saveBut" class="left">Save All</button>
+            </div>
+        </form>
+    </body>
+</html>
+<!--form for data entry then submit takes you to new page that displays data and there is new bg image button
+put login info into object that also holds all settings/pref for profile - then can load it off that-->
