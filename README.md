@@ -6,6 +6,8 @@ This project is a collection of basic HTML, CSS, and JavaScript elements, create
 
 Tutorial: https://www.w3schools.com/html/default.asp
 
+Clicking "Profile", "Random Img", and "MATCH THREE!" will link you to other pages - check them out!
+
 ## Features
 
 - Basic HTML structure and elements
