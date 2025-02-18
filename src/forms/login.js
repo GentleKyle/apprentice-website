@@ -2,12 +2,12 @@ window.onload = logout();
 
 const loginForm = document.getElementById("loginForm");
 
+
 loginForm.onsubmit = (e) => {
     e.preventDefault();
 
     const formData = new FormData(loginForm);
     const loginFormData = Object.fromEntries(formData);
-    console.log(loginFormData);
 
     const button = e.submitter.value;
     const userInfo = validateLogin(loginFormData);
@@ -42,6 +42,7 @@ loginForm.onsubmit = (e) => {
     }
 }
 
+//could add requirements for username/pw
 function validateLogin(loginFormData) {
     let validUser = {
         isValid: false,
@@ -76,6 +77,7 @@ function validateLogin(loginFormData) {
     return validUser;
 }
 
+//array of user objects - starts with loginInfo only - add data in scriptTwo.js
 function addUser(loginInfo) {
     let users = JSON.parse(sessionStorage.getItem("users"));
     const newUser = {loginInfo: loginInfo};

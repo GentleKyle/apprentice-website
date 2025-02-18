@@ -1,14 +1,15 @@
+//Enter login info - check if it exists - sessionstorage array of objects - 
+// each object is a user with "loginInfo" and "data" - also a currentUsr object outside of the array
+
 const dataForm = document.getElementById("dataForm");
 
+//gets background and random img - if there is saved data to usr gets put in input boxes
 window.onload = displayUsrName(), randomImgFirst(), setBackground(), fillForm();
 
 dataForm.onsubmit = (e) => {
     e.preventDefault();
-    //console.log(e);
     const formData = new FormData(dataForm);
-    //console.log(formData);
     const profileFormData = Object.fromEntries(formData);
-    //console.log(profileFormData);
 
     setUserData(profileFormData);
     window.location.replace("profile.html");
@@ -26,6 +27,7 @@ function setCurrentUser(userNum) {
     sessionStorage.setItem("currentUser", JSON.stringify(currentUser));
 }
 
+//adds data to user object and updates currentusr
 function setUserData(data) {
     const users = JSON.parse(sessionStorage.getItem("users"));
 
@@ -35,6 +37,7 @@ function setUserData(data) {
     setCurrentUser(getCurrentUser().index);
 }
 
+//fills input fields with usr saved data if it exists
 function fillForm() {
     const user = getCurrentUser();
 
@@ -97,7 +100,7 @@ function randomImgBut() {
 }
 
 
-
+//saved for syntax of joining two objects
 //     for (const [id, value] of Object.entries(profileForm)) {
     //const userUpdated = {...user.data, ...data}; --- can join two objects
 
